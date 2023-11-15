@@ -5,7 +5,7 @@
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-    background-image: url('/images/pexels-somben-chea-1266105.jpg'); 
+    background-image: url("../../public/images/pexels-somben-chea-1266105.jpg");
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -93,18 +93,5 @@
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-
-  button {
-    padding: 8px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #555; 
   }
   

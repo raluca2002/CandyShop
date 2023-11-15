@@ -1,0 +1,41 @@
+.subHeaderButton {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 200px;
+  padding: 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.subHeaderButton:hover {
+  color:orange;
+}
+
+#cartButton {
+  background-image: url("../../public/images/icons8-cart-48.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border: none;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+#subHeader {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#cartButton:hover {
+ color:orange;
+}

@@ -1,10 +1,12 @@
 // App.js
 import React, { useState } from 'react';
-import HomePage from './HomePage';
-import LoginPage from './LoginPage';
+import HomePage from './homepage/HomePage';
+import LoginPage from './login/LoginPage';
+
+export const tabs = { home: 'home', login: 'login', dashboard: 'dashboard' };
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState(tabs.home);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -12,15 +14,15 @@ const App = () => {
 
   return (
     <div>
-      {currentPage === 'home' && <HomePage />}
-      {currentPage === 'login' && <LoginPage />}
-      {currentPage === 'dashboard' && <p>Dashboard content goes here.</p>}
+      {currentPage === tabs.home && <HomePage />}
+      {currentPage === tabs.login && <LoginPage />}
+      {currentPage === tabs.dashboard && <p>Dashboard content goes here.</p>}
 
       {currentPage === 'home' && (
-        <button onClick={() => handlePageChange('login')}>Go to Login</button>
+        <button className='loginButton' onClick={() => handlePageChange(tabs.login)}>Login</button>
       )}
       {currentPage === 'login' && (
-        <button onClick={() => handlePageChange('dashboard')}>Go to Dashboard</button>
+        <button onClick={() => handlePageChange(tabs.dashboard)}>Go to Dashboard</button>
       )}
     </div>
   );

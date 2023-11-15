@@ -1,0 +1,42 @@
+#homePage {
+  font-family: 'Poppins', sans-serif;
+}
+
+.loginButton {
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  right: 16px;
+  top: 50px;
+  font-weight: bold;
+  width: 15%;
+  font-size: 15px;
+  display: flex;
+  padding: 11px;
+  background-color: white;
+  color: black;
+  border-width: 3px;
+  border-color: orange;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.loginButton:hover {
+  background-color: orange;
+  transition: all .3s ease-in-out;
+  z-index: 1;
+}
+
+.description {
+  background-image: url("../../public/candy-day.webp");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 600px;
+  color: white;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
