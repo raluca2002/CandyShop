@@ -25,8 +25,7 @@ function SignUp() {
  
     const handleCreateAccount = (e) => {
         e.preventDefault();
-        // Implementează logica de autentificare aici
-        // După autentificare, poți redirecționa către o altă pagină
+        //
         window.location.href = '/dashboard';
     };
 
