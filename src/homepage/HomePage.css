@@ -8,7 +8,7 @@
   right: 16px;
   top: 50px;
   font-weight: bold;
-  width: 15%;
+  width: 10%;
   font-size: 15px;
   display: flex;
   padding: 11px;
@@ -22,7 +22,7 @@
 }
 
 .loginButton:hover {
-  background-color: orange;
+  color: orange;
   transition: all .3s ease-in-out;
   z-index: 1;
 }

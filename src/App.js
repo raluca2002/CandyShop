@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import HomePage from './homepage/HomePage';
 import LoginPage from './login/LoginPage';
+import SignUp from './signUp/SignUp';
 
-export const tabs = { home: 'home', login: 'login', dashboard: 'dashboard' };
+export const tabs = { home: 'home', login: 'login', dashboard: 'dashboard', signup: 'signup' };
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState(tabs.home);
@@ -15,7 +16,8 @@ const App = () => {
   return (
     <div>
       {currentPage === tabs.home && <HomePage />}
-      {currentPage === tabs.login && <LoginPage />}
+      {currentPage === tabs.login && <LoginPage setCurrentPage={setCurrentPage} />}
+      {currentPage === tabs.signup && <SignUp />}
       {currentPage === tabs.dashboard && <p>Dashboard content goes here.</p>}
 
       {currentPage === 'home' && (

@@ -42,6 +42,7 @@
   }
   
   .login-box button {
+    font-family: 'Poppins', sans-serif;
     padding: 15px;
     background-color: #ff4800;
     color: #fff;
@@ -68,15 +69,15 @@
   }
   
   .signup-link button {
+    font-family: 'Poppins', sans-serif;
     background: none;
     border: none;
     color: #ff4800;
     cursor: pointer;
-    text-decoration: underline;
   }
   
   .signup-link button:hover {
-    color: #ff4800;
+    color: white;
   }
 
   .input-group {

@@ -1,8 +1,9 @@
 // LoginPage.js
 import React, { useState } from 'react';
+import { tabs } from '../App';
 import './LoginPage.css';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,7 +28,7 @@ const LoginPage = () => {
           <button type="submit">Login</button>
         </form>
         <div className="signup-link">
-          <p>Don't have an account? <button onClick={() => console.log('Sign Up clicked')}>Sign Up</button></p>
+          <p>Don't have an account? <button onClick={() => props.setCurrentPage(tabs.signup)}>Sign Up</button></p>
         </div>
       </div>
     </div>

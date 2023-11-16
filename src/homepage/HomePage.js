@@ -1,12 +1,12 @@
 import React from 'react';
-import './HomePage.css'
 import Header from '../header/Header';
+import './HomePage.css';
 
 function HomePage() {
-  
+  //daca fac nav la butoanele din subheader nu mai randez header-ul in homepage
   return (
     <div id='homePage'>
-        <Header/>
+        <Header/> 
         <div className="description">
           <h2>Because adulting needs sugar!</h2>
         </div>
