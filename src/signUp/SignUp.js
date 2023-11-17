@@ -1,10 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 import SignUpInput from "./SignUpInput";
 import "../login/LoginPage.css";
 
-
 function SignUp() {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [firstname, setFirstname] = useState('');
@@ -22,11 +21,36 @@ function SignUp() {
         { type: 'text', name: 'city', placeholder: 'City', pattern: '^[A-Z][a-z]+', value: city, setValue: setCity },
         { type: 'text', name: 'country', placeholder: 'Country', pattern: '^[A-Z][a-z]+', value: country, setValue: setCountry },
     ]
- 
-    const handleCreateAccount = (e) => {
+
+    const handleCreateAccount = async (e) => {
         e.preventDefault();
-        //
-        window.location.href = '/dashboard';
+
+        const user = {
+            email,
+            password,
+            firstname,
+            lastname,
+            phoneNr,
+            address,
+            city,
+            country,
+        };
+
+        try {
+            // Make a POST request using Axios
+            const response = await axios.post('http://localhost:8080/users/add', user);
+
+            if (response.status === 200) {
+                // Registration successful, redirect to the dashboard or handle as needed
+                window.location.href = '/dashboard';
+            } else {
+                // Handle other status codes or error cases
+                console.error('Registration failed');
+            }
+        } catch (error) {
+            // Handle network errors or other exceptions
+            console.error('Error during registration:', error);
+        }
     };
 
     return(
