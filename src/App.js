@@ -1,30 +1,30 @@
 // App.js
 import React, { useState } from 'react';
-import HomePage from './homepage/HomePage';
 import LoginPage from './login/LoginPage';
 import SignUp from './signUp/SignUp';
+import Navigation from './navigation/Navigation';
 
-export const tabs = { home: 'home', login: 'login', dashboard: 'dashboard', signup: 'signup' };
+export const tabs = { home: 'home', login: 'login', dashboard: 'dashboard', signup: 'signup'};
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState(tabs.home);
+  const [currentWindow, setCurrentWindow] = useState(tabs.home);
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
+  const handleWindowChange = (page) => {
+    setCurrentWindow(page);
   };
 
   return (
     <div>
-      {currentPage === tabs.home && <HomePage />}
-      {currentPage === tabs.login && <LoginPage setCurrentPage={setCurrentPage} />}
-      {currentPage === tabs.signup && <SignUp />}
-      {currentPage === tabs.dashboard && <p>Dashboard content goes here.</p>}
+      {currentWindow === tabs.home && <Navigation />}
+      {currentWindow === tabs.login && <LoginPage setCurrentWindow={setCurrentWindow} />}
+      {currentWindow === tabs.signup && <SignUp />}
+      {currentWindow === tabs.dashboard && <p>Dashboard content goes here.</p>}
 
-      {currentPage === 'home' && (
-        <button className='loginButton' onClick={() => handlePageChange(tabs.login)}>Login</button>
+      {currentWindow === 'home' && (
+        <button className='loginButton' onClick={() => handleWindowChange(tabs.login)}>Login</button>
       )}
-      {currentPage === 'login' && (
-        <button onClick={() => handlePageChange(tabs.dashboard)}>Go to Dashboard</button>
+      {currentWindow === 'login' && (
+        <button onClick={() => handleWindowChange(tabs.dashboard)}>Go to Dashboard</button>
       )}
     </div>
   );

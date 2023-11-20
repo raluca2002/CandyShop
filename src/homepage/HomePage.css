@@ -29,9 +29,9 @@
 
 .description {
   background-image: url("../../public/candy-day.webp");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 900px;
+  height: 800px;
   color: white;
   text-align: center;
   display: grid;

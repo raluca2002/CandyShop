@@ -38,7 +38,7 @@ const LoginPage = (props) => {
             <button type="submit">Login</button>
           </form>
           <div className="signup-link">
-            <p>Don't have an account? <button onClick={() => props.setCurrentPage(tabs.signup)}>Sign Up</button></p>
+            <p>Don't have an account? <button onClick={() => props.setCurrentWindow(tabs.signup)}>Sign Up</button></p>
           </div>
         </div>
       </div>
