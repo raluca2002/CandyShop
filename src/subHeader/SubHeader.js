@@ -18,8 +18,11 @@ function SubHeader(props) {
             <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.home)}>Home</button>
             <Popup trigger={<button className="subHeaderButton">Shop</button>} position="bottom center" arrow={false}>
                 <div>
-                    <h3>Mai multe OPT</h3>
-                    <button onClick={() => props.setCurrentPage(page.shop)}>All</button>
+                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Candy & Sweets</button>
+                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Gummies</button>
+                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Lollipops</button>
+                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Chocolate</button>
+                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Cookies</button>
                 </div>
             </Popup>
             <button className= "subHeaderButton" onClick={() => props.setCurrentPage(page.misteryBox)}>MysteryBox</button>
