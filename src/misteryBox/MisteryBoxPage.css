@@ -1,0 +1,115 @@
+
+.misterybox-page {
+  padding: 200px;
+  background-color: #fdfdfd;
+  
+}
+
+.shop-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 100px;
+  margin-top: 50px;
+}
+
+.misterybox-container {
+  display: grid;
+  flex-direction:row;
+  gap: 20px;
+  margin-top: 20px;
+}
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.misterybox {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  background-color: #ffffff;
+  width: 370px;
+  background-color:rgba(234, 180, 180, 0.4);
+
+}
+
+.misterybox img {
+  max-width: 100%;
+  border-bottom: 1px solid #ddd;
+  
+}
+
+.misterybox h3 {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.misterybox p {
+  font-weight: bold;
+  color: #000000; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.back-button {
+  margin-top: 20px;
+  background-color: #e44d26;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.box-button {
+  background-color: #a72828; 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+
+}
+
+.box-button:hover {
+  animation: pulse 0.5s; 
+  background-color: #ff5722;
+}
+.box-title {
+  font-size: 24px;
+  font-weight:bold;
+  color: #333; 
+  padding: 10px;
+  border-radius: 8px; 
+}
+
+.photoDescription {
+  background-image: url("../../public/products/candyShelf.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  color: white;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px #000000;
+
+}
+.description-box {
+  background-color: rgba(234, 180, 180, 0.2);;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 1750px;
+    width: 100%;
+    text-align: center;}
+
+.description-box p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size:x-large;}
+
+

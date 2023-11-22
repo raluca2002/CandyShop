@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Header from "../header/Header";
 import HomePage from "../homepage/HomePage";
 import Shop from "../shop/Shop";
-import MisteryBox from "../misteryBox/MisteryBox";
+import MisteryBoxPage from "../misteryBox/MisteryBoxPage";
 
 export const page = { home: 'home',  shop: 'shop', misteryBox: 'misteryBox' };
 
@@ -14,7 +14,7 @@ function Navigation() {
             <Header setCurrentPage={setCurrentPage} />
             {currentPage === page.home && <HomePage />}
             {currentPage === page.shop && <Shop />}
-            {currentPage === page.misteryBox && <MisteryBox />}
+            {currentPage === page.misteryBox && <MisteryBoxPage />}
         </div>
         
     );
