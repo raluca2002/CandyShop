@@ -3,6 +3,7 @@ import axios from "axios";
 import ProductInShop from "./ProductInShop";
 import './Shop.css';
 import ProductPage from "./ProductPage";
+import Footer from "../footer/Footer";
 
 function Shop() {
 
@@ -36,7 +37,7 @@ function Shop() {
                     </div>    
                 </>
             )}
-                
+        <Footer/>        
         </div>
     );
 }

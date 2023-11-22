@@ -6,7 +6,7 @@ import './SubHeader.css';
 import "reactjs-popup/dist/index.css";
 
 const buttons = [
-    { key: "misteryBox", label: "MysteryBox"},
+    { key: "misteryBox", label: "MysteryBoxPage"},
     { key: "contact", label: "Contact"},
 ];
 
