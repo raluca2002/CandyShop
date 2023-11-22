@@ -15,10 +15,11 @@ const MisteryBoxPage = () => {
   return (
     <div className="misterybox-page">
       <div className="description-box">
+      <h1>MisteryBox</h1>
+
       <p>Embark on a unique flavor adventure with MisteryBox - the box full of sweet surprises that brings smiles with every opening! </p>
             <p>Each box is a magical journey into the world of flavors, where you'll uncover delicious tastes and exotic sweets.</p>
             <p>What can you find in a MisteryBox? </p>
-            <p>From fluffy candies and premium chocolate to unique delights, each box is carefully curated to offer you a sweet and satisfying experience.</p>
             <p>From fluffy candies and premium chocolate to unique delights, each box is carefully curated to offer you a sweet and satisfying experience.</p>
             <p>Get ready to be amazed by unique combinations, exotic flavors, and tempting textures. </p>
             <p>Order MisteryBox now and add a sweet note to your life!</p>
