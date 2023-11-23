@@ -4,7 +4,7 @@ import LoginPage from './login/LoginPage';
 import SignUp from './signUp/SignUp';
 import Navigation from './navigation/Navigation';
 
-export const tabs = { home: 'home', login: 'login', dashboard: 'dashboard', signup: 'signup' };
+export const tabs = { home: 'home', login: 'login', signup: 'signup' };
 
 const App = () => {
   const [currentWindow, setCurrentWindow] = useState(tabs.home);
@@ -15,10 +15,6 @@ const App = () => {
     const token = localStorage.getItem('token');
     setIsLoggedIn(!!token);
   }, []);
-
-  const handleWindowChange = (page) => {
-    setCurrentWindow(page);
-  };
 
   const handleLoginLogout = () => {
     // Clear the token from local storage on logout
@@ -35,16 +31,13 @@ const App = () => {
         {currentWindow === tabs.home && <Navigation />}
         {currentWindow === tabs.login && <LoginPage setCurrentWindow={setCurrentWindow} />}
         {currentWindow === tabs.signup && <SignUp />}
-        {currentWindow === tabs.dashboard && <p>Dashboard content goes here.</p>}
 
         {currentWindow === 'home' && (
             <button className='loginButton' onClick={handleLoginLogout}>
               {isLoggedIn ? 'Logout' : 'Login'}
             </button>
         )}
-        {currentWindow === 'login' && (
-            <button onClick={() => handleWindowChange(tabs.dashboard)}>Go to Dashboard</button>
-        )}
+
       </div>
   );
 };
