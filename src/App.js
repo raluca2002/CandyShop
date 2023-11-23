@@ -38,7 +38,7 @@ const App = () => {
         {currentWindow === tabs.dashboard && <p>Dashboard content goes here.</p>}
 
         {currentWindow === 'home' && (
-            <button className='loginButton' onClick={() => handleWindowChange(tabs.login)}>
+            <button className='loginButton' onClick={handleLoginLogout}>
               {isLoggedIn ? 'Logout' : 'Login'}
             </button>
         )}
