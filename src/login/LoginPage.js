@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import {tabs} from "../App";
 
 const LoginPage = (props) => {
@@ -10,13 +11,21 @@ const LoginPage = (props) => {
     e.preventDefault();
 
     try {
-      const response = await axios.get(`http://localhost:8080/users/login/${email}/${password}`);
+      const response = await axios.post('http://localhost:8080/users/login', {
+        email: email,
+        password: password,
+      });
 
       if (response.data) {
-        // Login successful, redirect to dashboard
+
+        localStorage.setItem('token', response.data);
+        console.log('Login successful');
+
+
         window.location.href = '/dashboard';
+
       } else {
-        // Handle authentication failure
+
         console.log('Authentication failed');
       }
     } catch (error) {
@@ -38,7 +47,7 @@ const LoginPage = (props) => {
             <button type="submit">Login</button>
           </form>
           <div className="signup-link">
-            <p>Don't have an account? <button onClick={() => props.setCurrentWindow(tabs.signup)}>Sign Up</button></p>
+            <p>Don't have an account? <button onClick={() => props.setCurrentPage(tabs.signup)}>Sign Up</button></p>
           </div>
         </div>
       </div>
