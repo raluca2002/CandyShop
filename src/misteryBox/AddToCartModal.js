@@ -13,7 +13,7 @@ const AddToCartModal = ({ onClose, onAddToCart }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h3>Discover the Magic of Sweets with MisteryBox!</h3>
+        <h3>Discover the Magic of Sweets!</h3>
         <label>Quantity:</label>
         <input
           type="number"
