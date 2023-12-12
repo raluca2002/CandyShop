@@ -30,6 +30,7 @@ function SubHeader(props) {
             </Popup>
             <button className= "subHeaderButton" onClick={() => props.setCurrentPage(page.misteryBox)}>MysteryBox</button>
             <button className= "subHeaderButton">Contact</button>
+            <button className='searchButton' onClick={() => props.setCurrentPage(page.search)}></button>
             <CartButton/>
         </div>
     );

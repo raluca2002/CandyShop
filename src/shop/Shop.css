@@ -107,11 +107,19 @@
 }
 
 .range {
-    margin-left: 20px;
+    margin: 10px 20px;
+}
+
+.priceRange{
+    background-color: whitesmoke;
+    border-radius: 100px;
+    width: 300px;
+    text-align: center;
 }
 
 .priceRange input {
-    width: 300px;
+    text-align: center;
+    width: 250px;
     -webkit-appearance: none;
     appearance: none;
     padding: 0px;

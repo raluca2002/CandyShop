@@ -1,0 +1,15 @@
+.searchPage input {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(234, 180, 180, 0.7);
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input:focus {
+    outline-color: orange;
+}
+
+#cookieMonsterimg {
+    width: 100%;
+}
