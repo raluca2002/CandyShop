@@ -106,3 +106,33 @@
 .cartButton:hover {
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
+
+.range {
+    margin-left: 20px;
+}
+
+.priceRange input {
+    width: 300px;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color:rgba(234, 180, 180, 0.7);
+}
+
+.priceRange input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color:rgba(243, 112, 112, 0.7);
+    width: 20px;
+    height: 20px;
+    border-radius: 70%;
+    cursor: pointer;
+}
+
+#shopFilter {
+    display: flex;
+    justify-content: space-between;
+}

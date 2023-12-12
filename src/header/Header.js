@@ -7,7 +7,7 @@ function Header(props) {
         <div id="header">
             <img src="images/logoByteMe.jpeg" className='logoByteMe' alt='logo'/>
             <hr className="lineDivider" />
-            <SubHeader setCurrentPage={props.setCurrentPage}/>
+            <SubHeader setCurrentPage={props.setCurrentPage} setCategory={props.setCategory} />
         </div>
     );
 }

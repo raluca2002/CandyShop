@@ -10,19 +10,22 @@ const buttons = [
     { key: "contact", label: "Contact"},
 ];
 
-function SubHeader(props) {
+const categories = [
+    {key: 'Candy & Sweets', label: 0},
+    {key: 'Cookies', label: 1},
+    {key: 'Chocolate', label: 2},
+    {key: 'Gummies', label: 3},
+    {key: 'Lollipops', label: 4}
+];
 
+function SubHeader(props) {
 
     return(
         <div id='subHeader'>
             <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.home)}>Home</button>
             <Popup trigger={<button className="subHeaderButton">Shop</button>} position="bottom center" arrow={false}>
                 <div>
-                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Candy & Sweets</button>
-                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Gummies</button>
-                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Lollipops</button>
-                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Chocolate</button>
-                    <button className="subHeaderButton" onClick={() => props.setCurrentPage(page.shop)}>Cookies</button>
+                    {categories.map(eachCategory => <button className="subHeaderButton" onClick={() => {props.setCurrentPage(page.shop); props.setCategory(eachCategory.label);}}>{eachCategory.key}</button>)}
                 </div>
             </Popup>
             <button className= "subHeaderButton" onClick={() => props.setCurrentPage(page.misteryBox)}>MysteryBox</button>
