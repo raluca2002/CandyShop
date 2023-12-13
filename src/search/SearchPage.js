@@ -21,7 +21,7 @@ function SearchPage() {
           });
     }, []); 
 
-    const nameFilter = products.filter( product => product.name.includes(inputValue) )
+    const nameFilter = products.filter( product => product.name.toLowerCase().includes(inputValue.toLowerCase()) )
 
     return(
         <div className='searchPage'>
