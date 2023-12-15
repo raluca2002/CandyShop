@@ -35,9 +35,9 @@ function Shop() {
                         {products.map(product => <ProductInShop id={product.id} name={product.name} src={`products/${product.photo}`}
                             price={`${product.price}$`}  onClick={() => setSelectedProduct(product)}/>)} 
                     </div>    
+                    <Footer/> 
                 </>
-            )}
-        <Footer/>        
+            )}       
         </div>
     );
 }
