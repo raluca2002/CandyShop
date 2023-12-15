@@ -5,9 +5,12 @@ import "./Header.css";
 function Header(props) {
     return(
         <div id="header">
-            <img src="images/logoByteMe.jpeg" className='logoByteMe' alt='logo'/>
+            <div className="logos">
+                <img src="images/logoByteMe.jpeg" className='logoByteMe' alt='logo'/>
+                {/* <h2  className="description">Because adulting needs sugar!</h2> */}
+            </div>
             <hr className="lineDivider" />
-            <SubHeader setCurrentPage={props.setCurrentPage}/>
+            <SubHeader setCurrentPage={props.setCurrentPage} setCategory={props.setCategory} />
         </div>
     );
 }

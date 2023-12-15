@@ -14,6 +14,7 @@
     height: 400px;
     margin: 20px;
     text-align: center;
+    cursor: pointer;
 }
 
 #product h4 {
@@ -44,7 +45,6 @@
     place-items: center;
     font-size: 40px;
     text-shadow: 2px 2px 4px #000000;
-  
 }
 
 #productPage {
@@ -53,8 +53,6 @@
     justify-content: center;
     width: 100%;
     align-items: center;
-    
-    
 }
 
 .singleProductDescription h4 {
@@ -105,4 +103,42 @@
 
 .cartButton:hover {
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.range {
+    margin: 10px 20px;
+}
+
+.priceRange{
+    background-color: whitesmoke;
+    border-radius: 100px;
+    width: 300px;
+    text-align: center;
+}
+
+.priceRange input {
+    text-align: center;
+    width: 250px;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color:rgba(234, 180, 180, 0.7);
+}
+
+.priceRange input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color:rgba(243, 112, 112, 0.7);
+    width: 20px;
+    height: 20px;
+    border-radius: 70%;
+    cursor: pointer;
+}
+
+#shopFilter {
+    display: flex;
+    justify-content: space-between;
 }

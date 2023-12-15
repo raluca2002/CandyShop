@@ -2,6 +2,18 @@
     background-color: white;
 }
 
+.logos {
+    display: inline-flex;
+}
+
+/* .description {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  margin-left: 300px;
+} */
+
 .logoByteMe {
     width: 17%;
 }

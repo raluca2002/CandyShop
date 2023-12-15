@@ -21,7 +21,7 @@
     text-align: center;
   }
   
-  h3 {
+  .modal-content h3 {
     color: #000000;
     margin-bottom: 20px;
   }
@@ -42,7 +42,7 @@
   input {
     width: calc(100% - 20px);
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
   }

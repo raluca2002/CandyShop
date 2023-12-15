@@ -27,16 +27,35 @@
   z-index: 1;
 }
 
-.description {
-  background-image: url("../../public/candy-day.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 800px;
-  color: white;
-  text-align: center;
-  display: grid;
-  place-items: center;
-  font-size: 40px;
-  text-shadow: 2px 2px 4px #000000;
+.homePageDescription {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
 }
 
+.homePageDescription p {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: rgba(234, 180, 180, 0.7);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 600px;
+  color: #6F605B;
+  text-align: center;
+  place-items: center;
+  font-size: 20px;
+  margin-left: 40px;
+  padding: 30px;
+  transition: all .3s ease-in-out;
+}
+
+.homePageDescription p:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  width: 610px;
+  transition: all .3s ease-in-out;
+}

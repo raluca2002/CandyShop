@@ -6,8 +6,9 @@ import MisteryBoxPage from "../misteryBox/MisteryBoxPage";
 import ShoppingCart from "../cart/ShoppingCart";
 import CartButton from "../cart/CartButton"
 import ContactButton from "../contact/ContactButton";
+import SearchPage from "../search/SearchPage";
 
-export const page = { home: 'home',  cart: 'cart', shop: 'shop', misteryBox: 'misteryBox', contact: 'contact'};
+export const page = { home: 'home',  cart: 'cart', shop: 'shop', misteryBox: 'misteryBox', contact: 'contact', search: 'search',};
 
 function Navigation() {
     const [currentPage, setCurrentPage] = useState(page.home);
@@ -15,17 +16,20 @@ function Navigation() {
         setCurrentPage(page.cart);
         console.log('Current Page:', currentPage);
       };
+    const [category, setCategory] = useState(0);
 
     return (
         <div>
-            <Header setCurrentPage={setCurrentPage} />
+            <Header setCurrentPage={setCurrentPage} setCategory={setCategory} />
             {currentPage === page.home && <HomePage />}
             {currentPage === page.contact && <ContactButton/>}
-            {currentPage === page.shop && <Shop/>}
+            {currentPage === page.shop && <Shopcategory={category} />}
             {currentPage === page.misteryBox && <MisteryBoxPage/>}
             {currentPage === page.cart && <ShoppingCart/>}
+            {currentPage === page.search && <SearchPage />}
         
         </div>
+        
       );
 }
 
