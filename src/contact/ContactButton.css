@@ -1,0 +1,52 @@
+/* ContactButton.css */
+
+.contactContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+  
+  .contactButton {
+    background-color: #ffffff;
+    background-image: url('../../public/images/top-view-delicious-little-candies.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: #333333;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .contactButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+
+  }
+  
+  .contactImage {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, filter 0.3s;
+
+  }
+
+  .contactImage:hover {
+    transform: rotate(360deg);
+    filter: brightness(1.2);
+  }
+  
+  .contactName {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  

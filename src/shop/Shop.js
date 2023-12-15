@@ -11,7 +11,7 @@ function Shop() {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/products')
+        axios.get('http://localhost:8081/products')
           .then(response => {
             setProducts(response.data); 
 
