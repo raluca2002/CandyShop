@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
-import './AddToCartModal.css'; 
+import React from 'react';
+import './AddToCartModal.css';
 
-const AddToCartModal = ({ onClose, onAddToCart }) => {
-  const [quantity, setQuantity] = useState(1);
-
+const AddToCartModal = ({ onClose, onAddToCart, onQuantityChange, quantity }) => {
   const handleAddToCart = () => {
-    // Apelul funcției de adăugare în coș și închiderea modalului
-    onAddToCart(quantity);
-    onClose();
+    onAddToCart();
   };
 
   return (
@@ -18,7 +14,7 @@ const AddToCartModal = ({ onClose, onAddToCart }) => {
         <input
           type="number"
           value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
+          onChange={onQuantityChange}
         />
         <button onClick={handleAddToCart}>Add to cart</button>
         <button onClick={onClose}>Cancel</button>

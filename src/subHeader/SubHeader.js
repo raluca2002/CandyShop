@@ -1,13 +1,12 @@
 import React from 'react';
 import Popup from "reactjs-popup";
-import CartButton from './CartButton';
 import { page } from '../navigation/Navigation';
 import './SubHeader.css';
 import "reactjs-popup/dist/index.css";
 
 const buttons = [
-    { key: "misteryBox", label: "MysteryBoxPage"},
-    { key: "contact", label: "Contact"},
+  { key: "misteryBox", label: "MysteryBoxPage"},
+  { key: "contact", label: "Contact"},
 ];
 
 const categories = [
@@ -29,11 +28,11 @@ function SubHeader(props) {
                 </div>
             </Popup>
             <button className= "subHeaderButton" onClick={() => props.setCurrentPage(page.misteryBox)}>MysteryBox</button>
-            <button className= "subHeaderButton">Contact</button>
+            <button className= "subHeaderButton" onClick={() => props.setCurrentPage(page.contact)}>Contact</button>
+            <button className= "subHeaderButton" onClick={() => props.setCurrentPage(page.cart)}>🛒</button>
             <button className='searchButton' onClick={() => props.setCurrentPage(page.search)}></button>
-            <CartButton/>
         </div>
-    );
+  );
 }
 
 export default SubHeader;
