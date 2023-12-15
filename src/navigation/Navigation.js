@@ -12,10 +12,7 @@ export const page = { home: 'home',  cart: 'cart', shop: 'shop', misteryBox: 'mi
 
 function Navigation() {
     const [currentPage, setCurrentPage] = useState(page.home);
-    const handleCartClick = () => {
-        setCurrentPage(page.cart);
-        console.log('Current Page:', currentPage);
-      };
+
     const [category, setCategory] = useState(0);
 
     return (
@@ -23,7 +20,7 @@ function Navigation() {
             <Header setCurrentPage={setCurrentPage} setCategory={setCategory} />
             {currentPage === page.home && <HomePage />}
             {currentPage === page.contact && <ContactButton/>}
-            {currentPage === page.shop && <Shopcategory={category} />}
+            {currentPage === page.shop && <Shop category={category} />}
             {currentPage === page.misteryBox && <MisteryBoxPage/>}
             {currentPage === page.cart && <ShoppingCart/>}
             {currentPage === page.search && <SearchPage />}

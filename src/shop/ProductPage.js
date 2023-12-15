@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AddToCartModal from "../misteryBox/AddToCartModal";
+import AddToCartModal from "../cart/AddToCartModal";
 
 function ProductPage({ product, goBack }) {
   const [isModalOpen, setIsModalOpen] = useState(false);

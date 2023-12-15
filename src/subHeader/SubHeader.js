@@ -31,7 +31,6 @@ function SubHeader(props) {
             <button className= "subHeaderButton" onClick={() => props.setCurrentPage(page.contact)}>Contact</button>
             <button className= "subHeaderButton" onClick={() => props.setCurrentPage(page.cart)}>🛒</button>
             <button className='searchButton' onClick={() => props.setCurrentPage(page.search)}></button>
-            <CartButton/>
         </div>
   );
 }

@@ -6,13 +6,13 @@ import Footer from '../footer/Footer';
 const ContactButton = ({ onClick }) => {
   return (
     <div className="contactContainer">
-      {/* Aici adaugăm cele 7 casete cu imagine și descriere */}
+      
       <div className="contactButton">
         <img className="contactImage" src="images/georgiana.jpg" alt="Georgiana" />
         <p>Georgiana</p>
       </div>
       <div className="contactButton">
-        <img className="contactImage" src="images/imagine2.jpg" alt="Alexandru" />
+        <img className="contactImage" src="images/ecedi.jpg" alt="Alexandru" />
         <p>Alexandru</p>
       </div>
       <div className="contactButton">
@@ -32,7 +32,7 @@ const ContactButton = ({ onClick }) => {
         <p>Teodor</p>
       </div>
       <div className="contactButton">
-        <img className="contactImage" src="images/imagine1.jpg" alt="Tudor" />
+        <img className="contactImage" src="images/tudor.jpg" alt="Tudor" />
         <p>Tudor</p>
       </div>
       <Footer/>
