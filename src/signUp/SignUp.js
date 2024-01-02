@@ -38,7 +38,7 @@ function SignUp() {
 
         try {
             // Make a POST request using Axios
-            const response = await axios.post('http://localhost:8080/users/add', user);
+            const response = await axios.post('http://localhost:8081/users/add', user);
 
             if (response.status === 200) {
                 // Registration successful, redirect to the dashboard or handle as needed

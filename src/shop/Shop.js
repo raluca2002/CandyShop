@@ -13,7 +13,7 @@ function Shop(props) {
     const [sliderMoved, setSliderMoved] = useState(false)
 
     useEffect(() => {
-        axios.get('http://localhost:8080/products')
+        axios.get('http://localhost:8081/products')
           .then(response => {
             setProducts(response.data); 
 
