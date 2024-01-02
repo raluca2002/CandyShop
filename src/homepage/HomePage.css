@@ -1,5 +1,7 @@
 #homePage {
   font-family: 'Poppins', sans-serif;
+  background-image: url("../../public/images/sugar-sprinkles-off-white-background.jpg");
+  background-size: cover;
 }
 
 .loginButton {
@@ -54,8 +56,36 @@
   transition: all .3s ease-in-out;
 }
 
+.homePageDescription p h2 {
+  font-family: 'MuseoModerno', sans-serif;
+  font-weight: bold;
+}
+
 .homePageDescription p:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-  width: 610px;
+  /* width: 610px; */
   transition: all .3s ease-in-out;
 }
+
+.topProducts {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+}
+
+.topProductImg {
+  filter: brightness(95%);
+}
+
+#topProductsDescrtiption {
+  text-align: center;
+  color: #6F605B;
+}
+
+/* #price {
+  background-color: white;
+  filter: brightness(95%);
+  width: 25px;
+  text-align: center;
+} */
