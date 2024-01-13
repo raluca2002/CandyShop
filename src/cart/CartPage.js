@@ -1,7 +1,7 @@
 // CartPage.js
 import React, { useState, useEffect } from 'react';
 
-const CartPage = ({ isLoggedIn }) => {
+const CartPage = ({ isLoggedIn, setCurrentPage }) => {
   // Starea locală pentru a gestiona produsele din coș
   const [cartProducts, setCartProducts] = useState([]);
 
@@ -39,6 +39,7 @@ const CartPage = ({ isLoggedIn }) => {
           <button onClick={clearCart}>Clear Cart</button>
         </>
       )}
+      {!isLoggedIn && setCurrentPage('home')}
     </div>
   );
 };

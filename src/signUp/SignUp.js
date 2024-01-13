@@ -18,7 +18,7 @@ function SignUp() {
         { type: 'text', name: 'lastname', placeholder: 'Lastname', pattern: '^[A-Z][a-z]+', value: lastname, setValue: setLastname },
         { type: 'text', name: 'phoneNr', placeholder: 'Phone Number', pattern: '0[0-9]{9}', value: phoneNr, setValue: setPhoneNr },
         { type: 'text', name: 'address', placeholder: 'Address', pattern: '^[a-zA-Z0-9\s\.,#-]+$', value: address, setValue: setAddress },
-        { type: 'text', name: 'city', placeholder: 'City', pattern: '^[A-Z][a-z]+', value: city, setValue: setCity },
+        { type: 'text', name: 'city', placeholder: 'City', pattern: '^[A-Z][a-z\-]+', value: city, setValue: setCity },
         { type: 'text', name: 'country', placeholder: 'Country', pattern: '^[A-Z][a-z]+', value: country, setValue: setCountry },
     ]
 
@@ -38,7 +38,7 @@ function SignUp() {
 
         try {
             // Make a POST request using Axios
-            const response = await axios.post('http://localhost:8081/users/add', user);
+            const response = await axios.post('http://localhost:8080/users/add', user);
 
             if (response.status === 200) {
                 // Registration successful, redirect to the dashboard or handle as needed

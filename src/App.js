@@ -28,7 +28,7 @@ const App = () => {
 
   return (
       <div>
-        {currentWindow === tabs.home && <Navigation />}
+        {currentWindow === tabs.home && <Navigation isLoggedIn={isLoggedIn}/>}
         {currentWindow === tabs.login && <LoginPage setCurrentWindow={setCurrentWindow} />}
         {currentWindow === tabs.signup && <SignUp />}
 

@@ -10,7 +10,7 @@ function Header(props) {
                 {/* <h2  className="description">Because adulting needs sugar!</h2> */}
             </div>
             <hr className="lineDivider" />
-            <SubHeader setCurrentPage={props.setCurrentPage} setCategory={props.setCategory} />
+            <SubHeader setCurrentPage={props.setCurrentPage} setCategory={props.setCategory} isLoggedIn={props.isLoggedIn}/>
         </div>
     );
 }
