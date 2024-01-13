@@ -3,14 +3,13 @@ import Header from "../header/Header";
 import HomePage from "../homepage/HomePage";
 import Shop from "../shop/Shop";
 import MisteryBoxPage from "../misteryBox/MisteryBoxPage";
-import ShoppingCart from "../cart/ShoppingCart";
-import CartButton from "../cart/CartButton"
 import ContactButton from "../contact/ContactButton";
 import SearchPage from "../search/SearchPage";
+import CartPage from '../cart/CartPage';
 
 export const page = { home: 'home',  cart: 'cart', shop: 'shop', misteryBox: 'misteryBox', contact: 'contact', search: 'search',};
 
-function Navigation() {
+function Navigation({ isLoggedIn }) {
     const [currentPage, setCurrentPage] = useState(page.home);
 
     const [category, setCategory] = useState(0);
@@ -22,8 +21,8 @@ function Navigation() {
             {currentPage === page.contact && <ContactButton/>}
             {currentPage === page.shop && <Shop category={category} />}
             {currentPage === page.misteryBox && <MisteryBoxPage/>}
-            {currentPage === page.cart && <ShoppingCart/>}
             {currentPage === page.search && <SearchPage />}
+            {currentPage === page.cart && <CartPage isLoggedIn={isLoggedIn}/>}
         
         </div>
         
