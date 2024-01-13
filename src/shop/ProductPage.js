@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import AddToCartModal from "../cart/AddToCartModal";
 
 function ProductPage({ product, goBack }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleAddToCartClick = () => {
+    setIsModalOpen(true);
+  };
 
-
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const handleAddToCart = (quantity) => {
     //de implementat functionalitatea pentru adaugare in cos
@@ -20,6 +26,8 @@ function ProductPage({ product, goBack }) {
               <h3>{product.description}</h3>
               <h3>Country: {product.country}</h3>
               <h4>Price: {product.price}$</h4>
+              <button className="cartButton"  onClick={handleAddToCartClick}>Add to cart</button>
+              {isModalOpen && (<AddToCartModal onClose={handleCloseModal} onAddToCart={handleAddToCart} />)}
           </div>     
       </div>
     </div>
@@ -27,4 +35,3 @@ function ProductPage({ product, goBack }) {
 }
 
 export default ProductPage;
-
