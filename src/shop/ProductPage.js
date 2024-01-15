@@ -12,10 +12,6 @@ function ProductPage({ product, goBack }) {
     setIsModalOpen(false);
   };
 
-  const handleAddToCart = (quantity) => {
-    //de implementat functionalitatea pentru adaugare in cos
-  };
-
   return (
     <div>
       <button className="backButton" onClick={goBack}> go back</button>
@@ -27,7 +23,7 @@ function ProductPage({ product, goBack }) {
               <h3>Country: {product.country}</h3>
               <h4>Price: {product.price}$</h4>
               <button className="cartButton"  onClick={handleAddToCartClick}>Add to cart</button>
-              {isModalOpen && (<AddToCartModal onClose={handleCloseModal} onAddToCart={handleAddToCart} />)}
+              {isModalOpen && (<AddToCartModal  onClose={handleCloseModal}  idProduct={product.id} setIsModalOpen={setIsModalOpen}/>)}
           </div>     
       </div>
     </div>
