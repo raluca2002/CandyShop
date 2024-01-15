@@ -1,8 +1,9 @@
 // CartPage.js
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import "./CartPage.css"
 
-const CartPage = ({ isLoggedIn, setCurrentPage }) => {
+const CartPage = ({ isLoggedIn, setCurrentPage}) => {
   const [cartProducts, setCartProducts] = useState([]);
   const [idUser, setIdUser] = useState('');
   const [idOrder, setIdOrder] = useState('')
@@ -48,16 +49,22 @@ const CartPage = ({ isLoggedIn, setCurrentPage }) => {
   }, []); 
   
   return (
-    <div>
+    <div className='cartPage'>
       {isLoggedIn && (
         <>  
           <h2>Shopping Cart</h2>
           <ul>
             {cartProducts.map((product, index) => (
               <li key={index}>
-                <p>Product: {product.name}</p>
-                <p>Price: {product.price}</p>
-                {/* <p>Quantity: {product.quantity}</p> */}
+                <div className='cartItem'>
+                  <img className='cartImg' src={`products/${product.photo}`} alt="product"/>
+                  <div>
+                    <p>Product: {product.name}</p>
+                    <p>Price: {`${product.price}$`}</p>
+                    {/* <p>Quantity:{` ${quantity}`}</p> */}
+                  </div>
+                </div>
+                {/* <h3>{`Total: ${total}$`}</h3> */}
               </li>
             ))}
           </ul>

@@ -1,0 +1,21 @@
+.cartPage {
+    color: #6F605B;
+}
+
+.cartPage p {
+    color: rgba(238, 140, 140, 0.7);
+    font-weight: bold;
+}
+
+.cartImg {
+    width: 130px;
+} 
+
+li {
+    margin:20px;
+    list-style-type: none;
+}
+
+.cartItem {
+    display: inline-flex;
+}

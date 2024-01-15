@@ -18,10 +18,10 @@ function Navigation({ isLoggedIn }) {
             <Header setCurrentPage={setCurrentPage} setCategory={setCategory} isLoggedIn={isLoggedIn} />
             {currentPage === page.home && <HomePage />}
             {currentPage === page.contact && <ContactButton/>}
-            {currentPage === page.shop && <Shop category={category}/>}
+            {currentPage === page.shop && <Shop category={category} />}
             {currentPage === page.misteryBox && <MisteryBoxPage/>}
             {currentPage === page.search && <SearchPage />}
-            {currentPage === page.cart && <CartPage isLoggedIn={isLoggedIn} setCurrentPage={setCurrentPage}  />}
+            {currentPage === page.cart && <CartPage isLoggedIn={isLoggedIn} setCurrentPage={setCurrentPage} />}
         
         </div>
         
