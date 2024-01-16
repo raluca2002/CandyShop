@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './AddToCartModal.css';
 
-const AddToCartModal = ({ onClose, idProduct, setIsModalOpen }) => {
+const AddToCartModal = ({ onClose, idProduct }) => {
   const [quantity, setQuantity] = useState(1);
   const [user, setUser] = useState('');
   const [idOrder, setIdOrder] = useState('')
@@ -50,6 +50,7 @@ const AddToCartModal = ({ onClose, idProduct, setIsModalOpen }) => {
       {console.log('orderItem',orderItem.id_order)}
       const response = await axios.post(`http://localhost:8080/orderitems/addorderitems`, orderItem);
       console.log('orderItem',response.status)  
+      onClose();
   
     } catch (error) {
       console.error('Error creating order:', error);

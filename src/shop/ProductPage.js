@@ -23,7 +23,7 @@ function ProductPage({ product, goBack }) {
               <h3>Country: {product.country}</h3>
               <h4>Price: {product.price}$</h4>
               <button className="cartButton"  onClick={handleAddToCartClick}>Add to cart</button>
-              {isModalOpen && (<AddToCartModal  onClose={handleCloseModal}  idProduct={product.id} setIsModalOpen={setIsModalOpen}/>)}
+              {isModalOpen && (<AddToCartModal  onClose={handleCloseModal}  idProduct={product.id} />)}
           </div>     
       </div>
     </div>
