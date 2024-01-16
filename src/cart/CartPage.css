@@ -1,21 +1,79 @@
+/* General styling for the cart page */
 .cartPage {
-    color: #6F605B;
+    color: #333;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for the cart page title */
+.cartPage h2 {
+    color: #9e618d;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Styling for product information */
 .cartPage p {
-    color: rgba(238, 140, 140, 0.7);
+    color: #9e618d;
     font-weight: bold;
+    margin: 5px 0;
 }
 
+/* Styling for product images */
 .cartImg {
-    width: 130px;
-} 
-
-li {
-    margin:20px;
-    list-style-type: none;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+    border: 2px solid #9e618d;
 }
 
+/* Styling for each cart item */
+li {
+    margin: 20px 0;
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+/* Styling for the cart item container */
 .cartItem {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for product details */
+.productDetails {
+    flex-grow: 1;
+}
+
+/* Styling for the total price section */
+.totalPrice {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #9e618d;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Styling for the clear cart button */
+.clearCartButton {
+    background-color: #9e618d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.clearCartButton:hover {
+    background-color: #9e618d;
 }
