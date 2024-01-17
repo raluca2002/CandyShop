@@ -90,7 +90,7 @@ const CartPage = ({ isLoggedIn, setCurrentPage}) => {
 
   const showProcessingMessage = () => {
     const processingMessage = document.createElement('div');
-    processingMessage.textContent = 'Processing payment...';
+    processingMessage.textContent = 'Processing order...';
     processingMessage.style.position = 'fixed';
     processingMessage.style.top = '50%';
     processingMessage.style.left = '50%';
@@ -100,7 +100,7 @@ const CartPage = ({ isLoggedIn, setCurrentPage}) => {
     processingMessage.style.borderRadius = '10px';
     processingMessage.style.textAlign = 'center';
     document.body.appendChild(processingMessage);
-    console.log('Processing payment...');
+    console.log('Processing order...');
   
     setTimeout(() => {
       processingMessage.style.display = 'none'; 
@@ -185,6 +185,7 @@ const handleCreateOrder = async (idUser) => {
             <CreateOrder cartProducts={cartProducts} setShowCreateOrder={setShowCreateOrder} />
           )}
           {orderPlaced && <p>Order placed successfully!</p>}
+          {orderPlaced && <p>Thank you for your order! We appreciate and look forward to serving you again.</p>}
         </>
       )}
       {!isLoggedIn && setCurrentPage('home')}
