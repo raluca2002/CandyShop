@@ -4,6 +4,7 @@ import axios from "axios";
 const CreateOrder = ({ idUser}) => {
   let total = 0;
   useEffect(() => {
+    
     const handleCreateOrder = async (idUser) => {
       const order = {
         id_user: idUser,
@@ -15,6 +16,7 @@ const CreateOrder = ({ idUser}) => {
       } catch (error) {
         console.error('Error creating order:', error);
       }
+      
     };
     handleCreateOrder(idUser);
   }, []); 

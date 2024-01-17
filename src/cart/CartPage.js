@@ -2,16 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import "./CartPage.css"
-import OrderConfirmationModal from './OrderConfirmationModal';
 import CreateOrder from './CreateOrder';
 
 
 const CartPage = ({ isLoggedIn, setCurrentPage}) => {
   const [cartProducts, setCartProducts] = useState([]);
+  const [newCartProducts, setNewCartProducts] = useState([]);
   const [idUser, setIdUser] = useState('');
   const [idOrder, setIdOrder] = useState('')
   const [total, setTotal] = useState(0)
-  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [showCreateOrder, setShowCreateOrder] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const token = localStorage.getItem('token')
@@ -64,21 +63,20 @@ const CartPage = ({ isLoggedIn, setCurrentPage}) => {
         console.error('Error fetching cart products:', error);
       }
     };
-
     fetchUserId()
   }, []); 
   
-  const handlePlaceOrder = async (idOrd) => {
+  const handlePlaceOrder = async () => {
     try {
       let userConfirmed;
   
       userConfirmed = window.confirm(`Are you sure you want to place the order?`);
-      if (userConfirmed) {        
-  
-        setShowCreateOrder(true);
-  
+      if (userConfirmed) {
+        await handleCreateOrder(idUser);
+        setTotal(0);
         setOrderPlaced(true);
         setCartProducts([]);
+        console.log('Order placed successfully!');
       } else {
         console.log('Order placement canceled by the user.');
       }
@@ -87,18 +85,35 @@ const CartPage = ({ isLoggedIn, setCurrentPage}) => {
     }
   };
 
-  const handleRemoveProduct = async (productId) => {
-    try {
-      // Implementează logica pentru ștergerea produsului din coș
-      const response = await axios.delete(`http://localhost:8080/orderitems/delete/${productId}`);
-      console.log(response.data);
-      // Reîncarcă lista de produse după ștergere
-      showCartProducts(idOrder);
-    } catch (error) {
-      console.error('Error removing product:', error);
-    }
-  };
+  const handleRemoveProduct = async (id_order, id_product) => {
+  try {
+        await axios.delete(`http://localhost:8080/orderitems/${id_order}/${id_product}`);
+      const response = await axios.get(`http://localhost:8080/orderitems/getoforder/${id_order}`);
+      setCartProducts(response.data);
 
+      const totalResponse = await axios.get(`http://localhost:8080/order/gettotal/${id_order}`);
+      setTotal(totalResponse.data);
+
+      setCartProducts((prevCartProducts) =>
+      prevCartProducts.filter((product) => product.a.id !== id_product)
+    );
+  } catch (error) {
+    console.error('Error removing product:', error);
+  }
+};
+
+const handleCreateOrder = async (idUser) => {
+  const order = {
+    id_user: idUser,
+    total: 0,
+  };
+  try {
+    const response = await axios.post(`http://localhost:8080/order/addorder`, order);
+    console.log(response.status);
+  } catch (error) {
+    console.error('Error creating order:', error);
+  }
+};
 
 
   return (
@@ -115,7 +130,7 @@ const CartPage = ({ isLoggedIn, setCurrentPage}) => {
                     <p>Product: {product.a.name}</p>
                     <p>Price: {`${product.a.price}$`}</p>
                     <p>Quantity:{` ${product.b}`}</p>
-                    <button onClick={() => handleRemoveProduct(product.id)}>Remove</button>
+                  <button onClick={() => handleRemoveProduct(idOrder, product.a.id)}>Remove</button>
 
                   </div>
                 </div>
