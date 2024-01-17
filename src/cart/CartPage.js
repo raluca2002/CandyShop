@@ -72,6 +72,9 @@ const CartPage = ({ isLoggedIn, setCurrentPage}) => {
   
       userConfirmed = window.confirm(`Are you sure you want to place the order?`);
       if (userConfirmed) {
+        showProcessingMessage();
+        await delay(3000);
+        closeWindow();
         await handleCreateOrder(idUser);
         setTotal(0);
         setOrderPlaced(true);
@@ -85,9 +88,44 @@ const CartPage = ({ isLoggedIn, setCurrentPage}) => {
     }
   };
 
+  const showProcessingMessage = () => {
+    const processingMessage = document.createElement('div');
+    processingMessage.textContent = 'Processing payment...';
+    processingMessage.style.position = 'fixed';
+    processingMessage.style.top = '50%';
+    processingMessage.style.left = '50%';
+    processingMessage.style.transform = 'translate(-50%, -50%)';
+    processingMessage.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+    processingMessage.style.padding = '20px';
+    processingMessage.style.borderRadius = '10px';
+    processingMessage.style.textAlign = 'center';
+    document.body.appendChild(processingMessage);
+    console.log('Processing payment...');
+  
+    setTimeout(() => {
+      processingMessage.style.display = 'none'; 
+      startOrderProcessing();
+    }, 3000); 
+  };
+  
+  const startOrderProcessing = async () => {
+    try {
+      await handleCreateOrder(idUser);
+      setTotal(0);
+      setOrderPlaced(true);
+      setCartProducts([]);
+      console.log('Order placed successfully!');
+    } catch (error) {
+      console.error('Error placing order:', error);
+    }
+  };
+  
+  const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+  
+  
   const handleRemoveProduct = async (id_order, id_product) => {
   try {
-        await axios.delete(`http://localhost:8080/orderitems/${id_order}/${id_product}`);
+      await axios.delete(`http://localhost:8080/orderitems/${id_order}/${id_product}`);
       const response = await axios.get(`http://localhost:8080/orderitems/getoforder/${id_order}`);
       setCartProducts(response.data);
 
